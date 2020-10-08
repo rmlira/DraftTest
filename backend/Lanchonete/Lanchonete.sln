@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Domain", "00-Domain", "{C1B5A08E-3F96-4693-9CD5-941D706A03E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Services", "01-Services", "{77701227-8170-4A75-B690-6EFEA14EFACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanchonete.Domain", "src\Lanchonete.Domain\Lanchonete.Domain.csproj", "{51F1980C-241F-4F3F-A818-5BFB8C9B1D59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanchonete.Api", "src\Lanchonete.Api\Lanchonete.Api.csproj", "{7218303C-52C9-469A-AA57-FE152AFAFC30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F1980C-241F-4F3F-A818-5BFB8C9B1D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F1980C-241F-4F3F-A818-5BFB8C9B1D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F1980C-241F-4F3F-A818-5BFB8C9B1D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F1980C-241F-4F3F-A818-5BFB8C9B1D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7218303C-52C9-469A-AA57-FE152AFAFC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7218303C-52C9-469A-AA57-FE152AFAFC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7218303C-52C9-469A-AA57-FE152AFAFC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7218303C-52C9-469A-AA57-FE152AFAFC30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51F1980C-241F-4F3F-A818-5BFB8C9B1D59} = {C1B5A08E-3F96-4693-9CD5-941D706A03E8}
+		{7218303C-52C9-469A-AA57-FE152AFAFC30} = {77701227-8170-4A75-B690-6EFEA14EFACE}
+	EndGlobalSection
+EndGlobal

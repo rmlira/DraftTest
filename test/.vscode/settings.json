@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "editor.rulers": [180],
+  "cSpell.allowCompoundWords": true,
+  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.words": [
+    "Lanches"
+  ]
+}

@@ -1,0 +1,10 @@
+<div class="container-fluid mb-2 border-bottom">
+  <div class="row" *ngFor="let lanche of lanches; trackBy: trackLanche">
+    <div class="col-12 p-0">
+      <p class="btn text-left text-nowrap p-3 w-100 title-effect" (click)="editLanche(lanche)">
+        {{lanche.nome}}
+      </p>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="addLanche()">Add Lanche</button>

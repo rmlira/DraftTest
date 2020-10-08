@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "projects": {
+    "lanchonete": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/lanchonete",
+      "sourceRoot": "apps/lanchonete/src",
+      "prefix": "test",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/lanchonete",
+            "index": "apps/lanchonete/src/index.html",
+            "main": "apps/lanchonete/src/main.ts",
+            "polyfills": "apps/lanchonete/src/polyfills.ts",
+            "tsConfig": "apps/lanchonete/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/lanchonete/src/favicon.ico",
+              "apps/lanchonete/src/assets"
+            ],
+            "styles": ["apps/lanchonete/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/lanchonete/src/environments/environment.ts",
+                  "with": "apps/lanchonete/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "lanchonete:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lanchonete:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "lanchonete:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/lanchonete/tsconfig.app.json",
+              "apps/lanchonete/tsconfig.spec.json",
+              "apps/lanchonete/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/lanchonete/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/lanchonete/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "lanchonete-e2e": {
+      "root": "apps/lanchonete-e2e",
+      "sourceRoot": "apps/lanchonete-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/lanchonete-e2e/cypress.json",
+            "tsConfig": "apps/lanchonete-e2e/tsconfig.e2e.json",
+            "devServerTarget": "lanchonete:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "lanchonete:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/lanchonete-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/lanchonete-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "lanchonete"
+}
